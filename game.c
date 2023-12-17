@@ -12,8 +12,8 @@ int main(void)
 {
     char done;
 
-    printf("Игра в крестики нолики\n");
-    printf("вы будете играть против ПК\n");
+    printf("Tic Tac Toe Game\n");
+    printf("you will play against PC\n");
 
     done = ' ';
     init_matrix();
@@ -22,20 +22,20 @@ int main(void)
         disp_matrix();
         get_player_move();
         get_computer_move();
-        done = check(); // проверка есть ли победитель
-        if (done!=' ') break; // есть победитель  
+        done = check(); // check if there is a winner
+        if (done!=' ') break; // there is a winner
         get_computer_move();
-        done = check();// проверка есть ли победител
+        done = check();// check if there is a winner
         } while(done == ' ');
 
-    if(done == 'X') printf("Вы победитель!\n");
-    else printf("пк победил\n");
-    disp_matrix(); // показ финальной позиции
+    if(done == 'X') printf("You are a winner!\n");
+    else printf("PC won\n");
+    disp_matrix(); // showing the final position
 
     return 0;    
 }
 
-// инициализация матрицы игры
+// initializing the game matrix
 void init_matrix(void)
 {
     int i,j;
@@ -45,18 +45,18 @@ void init_matrix(void)
 void get_player_move(void)
 {
     int x,y;
-    printf("координаты x,y вышего хода ");
+    printf("x,y coordinates of the higher move ");
     scanf("%d%*c%d", &x, &y);
     x--; y--;
     
     if(matrix[x][y] != ' ')
     {
-        printf("неверный ход, попытайся еще раз\n");
+        printf("wrong move, try again\n");
         get_player_move();
     }
     else matrix[x][y] = 'X';
 }
-// ХОД ПК
+// PC STROKE
 
 void get_computer_move(void)
 {
@@ -65,7 +65,7 @@ void get_computer_move(void)
     for(j=0;j<3;j++)
         if(matrix[i][j]==' ') break;
         if(matrix[i][j]==' ') break;
-     // второй break нужен для выхода из цикла по i   
+     // the second break is needed to exit the loop on i
     }
     if(i*j == 9) {
         printf("Game over\n");
@@ -75,8 +75,7 @@ void get_computer_move(void)
     matrix[i][j] = 'O';
 }
 
-// вывод матрицы на эssssкоан 
-// dasdasd
+//displaying the matrix on the screen
 void disp_matrix(void)
 
 {
@@ -90,7 +89,7 @@ void disp_matrix(void)
     printf("\n");
 }
 
-// определяем победителя
+// we determine the winner
 char check(void)
 {
     int i;
