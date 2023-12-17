@@ -21,7 +21,6 @@ int main(void)
     do {
         disp_matrix();
         get_player_move();
-        get_computer_move();
         done = check(); // check if there is a winner
         if (done!=' ') break; // there is a winner
         get_computer_move();
