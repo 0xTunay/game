@@ -4,8 +4,8 @@
 char matrix[3][3];
 char check(void);
 void init_matrix(void);
-void get_player_move(void);
-void get_computer_move(void);
+void get_player1_move(void);
+void get_playr2_move(void);
 void disp_matrix(void);
 
 int main(void)
@@ -20,10 +20,10 @@ int main(void)
 
     do {
         disp_matrix();
-        get_player_move();
+        get_player1_move();
         done = check(); // check if there is a winner
         if (done!=' ') break; // there is a winner
-        get_computer_move();
+        get_playr2_move();
         done = check();// check if there is a winner
         } while(done == ' ');
 
@@ -41,7 +41,7 @@ void init_matrix(void)
     for(i=0;i<3;i++)
     for(j=0;j<3;j++) matrix[i][j] = ' ';
 }
-void get_player_move(void)
+void get_player1_move(void)
 {
     int x,y;
     printf("x,y coordinates of the higher move ");
@@ -51,24 +51,23 @@ void get_player_move(void)
     if(matrix[x][y] != ' ')
     {
         printf("wrong move, try again\n");
-        get_player_move();
+        get_player1_move();
     }
     else matrix[x][y] = 'X';
 }
 // PC STROKE
 
-void get_computer_move(void)
+void get_playr2_move(void)
 {
     int i,j;
-    for(i=0;i<3;i++){
-    for(j=0;j<3;j++)
-        if(matrix[i][j]==' ') break;
-        if(matrix[i][j]==' ') break;
-     // the second break is needed to exit the loop on i
-    }
-    if(i*j == 9) {
-        printf("Game over\n");
-        exit(0);
+    printf("x,y coordinates of the higher move ");
+    scanf("%d%*c%d", &i, &j);
+    i--; j--;
+    
+    if(matrix[j][i] != ' ')
+    {
+        printf("wrong move, try again\n");
+        get_playr2_move();
     }
     else
     matrix[i][j] = 'O';
