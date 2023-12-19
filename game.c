@@ -13,7 +13,7 @@ int main(void)
     char done;
 
     printf("Tic Tac Tie Game\n");
-    printf("you will playsasd against PC\n");
+    printf("you will playsasd Friend\n");
 
     done = ' ';
     init_matrix();
@@ -27,8 +27,8 @@ int main(void)
         done = check();// check if there is a winner
         } while(done == ' ');
 
-    if(done == 'X') printf("You are a winner!\n");
-    else printf("PC won\n");
+    if(done == 'X') printf("Playr1 a winner!\n");
+    else printf("Playr2 won\n");
     disp_matrix(); // showing the final position
 
     return 0;    
@@ -44,7 +44,7 @@ void init_matrix(void)
 void get_player1_move(void)
 {
     int x,y;
-    printf("x,y coordinates of the higher move ");
+    printf("Start Player1 x,y coordinates of the higher move ");
     scanf("%d%*c%d", &x, &y);
     x--; y--;
     
@@ -60,7 +60,7 @@ void get_player1_move(void)
 void get_playr2_move(void)
 {
     int i,j;
-    printf("x,y coordinates of the higher move ");
+    printf("Player2 x,y coordinates of the higher move ");
     scanf("%d%*c%d", &i, &j);
     i--; j--;
     
