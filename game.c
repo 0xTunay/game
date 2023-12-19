@@ -12,8 +12,8 @@ int main(void)
 {
     char done;
 
-    printf("Tic Tac Toe Game\n");
-    printf("you will play against PC\n");
+    printf("Tic Tac Tie Game\n");
+    printf("you will playsasd against PC\n");
 
     done = ' ';
     init_matrix();
