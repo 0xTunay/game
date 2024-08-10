@@ -1,4 +1,6 @@
-#include "tictactoe.h"
+#include <stdio.h>
+
+#include "../include/tictactoe.h"
 
 int main(void)
 {
@@ -13,17 +15,17 @@ int main(void)
     do {
         disp_matrix();
         get_player_move();
-        done = check(); // Check for a winner after player's move
-        if (done != ' ') break; // Check if there is a winner after player's move
+        done = check();
+        if (done != ' ') break; 
 
         get_computer_move();
-        done = check(); // Check for a winner after computer's move
+        done = check();
     } while (done == ' ');
 
     if (done == 'X') printf("You are the winner!\n");
     else printf("PC wins\n");
     
-    disp_matrix(); // Show the final position
+    disp_matrix(); 
 
     return 0;    
 }
