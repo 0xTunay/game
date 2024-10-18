@@ -1,7 +1,6 @@
 #ifndef TICTACTOE_H
 #define TICTACTOE_H
 
-#include <stdio.h>
 
 extern char matrix[3][3];
 
@@ -11,4 +10,4 @@ void get_computer_move(void);
 void disp_matrix(void);
 char check(void);
 
-#endif
+#endif // TICTACTOE_H

@@ -1,8 +1,9 @@
-#include "tictactoe.h"
+#include <stdio.h>
+
+#include "../include/tictactoe.h"
 
 char matrix[3][3];
 
-// Initialize the game matrix
 void init_matrix(void)
 {
     int i, j;
@@ -28,7 +29,6 @@ void get_player_move(void)
         matrix[x][y] = 'X';
 }
 
-// Get the computer's move
 void get_computer_move(void)
 {
     int i, j;
@@ -39,13 +39,12 @@ void get_computer_move(void)
             if (matrix[i][j] == ' ')
             {
                 matrix[i][j] = 'O';
-                return; // Break out of the function after making a move
+                return; 
             }
         }
     }
 }
 
-// Display the game matrix
 void disp_matrix(void)
 {
     int t;
@@ -58,7 +57,6 @@ void disp_matrix(void)
     printf("\n");
 }
 
-// Check for a winner
 char check(void)
 {
     int i;

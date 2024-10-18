@@ -1,3 +1,4 @@
+
 ## Tic Tac Toe in C - Play against the Computer
 
 This project implements a simple Tic Tac Toe game in C where you can play against the computer.
@@ -51,4 +52,3 @@ The game continues until either player wins by forming a horizontal, vertical, o
 * Refer to the `tic_tac_toe.c` file for the code implementation and detailed logic.
 
 Feel free to explore and customize the code to learn more about C programming and game development.
-
